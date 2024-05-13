@@ -1,4 +1,17 @@
+import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import React, { useState, useCallback } from "react";
+
 function Footer() {
+  const mapContainerStyle = {
+    width: "300px",
+    height: "300px",
+  };
+
+  const center = {
+    lat: -3.745,
+    lng: -38.523,
+  };
+
   return (
     <>
       <footer className="text-center text-lg-start bg-body-tertiary text-muted">
@@ -25,32 +38,21 @@ function Footer() {
                 <h6 className="text-uppercase fw-bold mb-4">
                   Thông Tin Liên Hệ
                 </h6>
-                <p>
-                  Địa chỉ : 33 Đường số 12, P.Trường Thọ, Thủ Đức, Tp.HCM
-                </p>
-                <p>
-                  Điện thoại: 090 66 00 468
-                </p>
-                <p>
-                  Website: www.datsan.link
-                </p>
+                <p>Địa chỉ : 33 Đường số 12, P.Trường Thọ, Thủ Đức, Tp.HCM</p>
+                <p>Điện thoại: 090 66 00 468</p>
+                <p>Website: www.datsan.link</p>
               </div>
-              
-              <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-4 mt-4">
-                <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-                <p>
-                  <i className="fas fa-home me-3" /> New York, NY 10012, US
-                </p>
-                <p>
-                  <i className="fas fa-envelope me-3" />
-                  info@example.com
-                </p>
-                <p>
-                  <i className="fas fa-phone me-3" /> + 01 234 567 88
-                </p>
-                <p>
-                  <i className="fas fa-print me-3" /> + 01 234 567 89
-                </p>
+
+              <div className="col-md-3 col-lg-3 col-xl-3   mx-auto mb-md-0 mb-4 mt-4">
+                <LoadScript googleMapsApiKey="AIzaSyD3GLAPTpDNpIIQ5FqEWsSSfTkR_l88tg4">
+                  <GoogleMap
+                    mapContainerStyle={mapContainerStyle}
+                    center={center}
+                    zoom={10}
+                  >
+                    {/* Add any additional map components or markers here */}
+                  </GoogleMap>
+                </LoadScript>
               </div>
             </div>
           </div>
