@@ -3,9 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '@assets/Logo-Bzone-11.jpg'
-import "./Header.scss"
 
-function Header() {
+import "./header.scss"
+
+export default function Header() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
     <Container>
@@ -29,5 +30,3 @@ function Header() {
   </Navbar>
   )
 }
-
-export default Header

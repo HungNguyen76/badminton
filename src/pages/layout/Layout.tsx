@@ -1,17 +1,22 @@
-import Footer from "@/components/Footer"
-import Header from "@/components/Header"
+import Footer from "@/components/footer"
+import Header from "@/components/header"
 import Banner from "@/components/banner"
 import Home from "../home/Home"
 
-function Layout() {
+export default function Layout() {
+  // Back to top
+  const handleBackToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
   return (
     <div>
       <Header />
       <Banner />
       <Home />
-      <Footer />
+      <Footer handleBackToTop={handleBackToTop}/>
     </div>
   )
 }
-
-export default Layout
