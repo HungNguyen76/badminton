@@ -1,8 +1,11 @@
 import { lazy, Suspense } from "react"
 import Loading from "./components/loading"
+import Permission from "./components/per"
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const lazyFn = (importFunc: any) => {
+export const lazyFn = (importFunc: any, access: boolean = true, fallback: string | null = null) => {
+
+  // check per
+  if (!access) return <Permission fallback={fallback}/> 
 
   // set timeout for load
   const LazyComponent = lazy(() => {

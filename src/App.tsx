@@ -1,4 +1,4 @@
-import RouteSetup from "@routes"
+import RouteSetup from "./routes"
 
 export default function App() {
   return (

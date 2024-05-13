@@ -1,17 +1,6 @@
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
-import React, { useState, useCallback } from "react";
 
-function Footer() {
-  const mapContainerStyle = {
-    width: "300px",
-    height: "300px",
-  };
 
-  const center = {
-    lat: -3.745,
-    lng: -38.523,
-  };
-
+export default function Footer({ handleBackToTop }: any) {
   return (
     <>
       <footer className="text-center text-lg-start bg-body-tertiary text-muted">
@@ -44,15 +33,7 @@ function Footer() {
               </div>
 
               <div className="col-md-3 col-lg-3 col-xl-3   mx-auto mb-md-0 mb-4 mt-4">
-                <LoadScript googleMapsApiKey="AIzaSyD3GLAPTpDNpIIQ5FqEWsSSfTkR_l88tg4">
-                  <GoogleMap
-                    mapContainerStyle={mapContainerStyle}
-                    center={center}
-                    zoom={10}
-                  >
-                    {/* Add any additional map components or markers here */}
-                  </GoogleMap>
-                </LoadScript>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7837.3456139079235!2d106.754685!3d10.836332!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527ae185ad3af%3A0xefcea983642587f9!2zU8OibiBD4bqndSBMw7RuZyBWaWN0b3J5!5e0!3m2!1sen!2sus!4v1715611425655!5m2!1sen!2sus" width="450" height="200" loading="lazy" />
               </div>
             </div>
           </div>
@@ -67,5 +48,3 @@ function Footer() {
     </>
   );
 }
-
-export default Footer;
